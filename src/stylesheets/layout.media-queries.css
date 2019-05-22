@@ -1,0 +1,41 @@
+/* stylelint-disable selector-class-pattern */
+
+@media (min-width: 2560px) {
+  .app__layout_sidebar {
+    flex-basis: 10%;
+  }
+
+  .app__layout_content {
+    flex-basis: 90%;
+  }
+}
+
+@media (min-width: 1919px) and (max-width: 2559px) {
+  .app__layout_sidebar {
+    flex-basis: 15%;
+  }
+
+  .app__layout_content {
+    flex-basis: 85%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 969px) {
+  .app__layout_sidebar {
+    flex-basis: 35%;
+  }
+
+  .app__layout_content {
+    flex-basis: 65%;
+  }
+}
+
+@media (max-width: 639px) {
+  .app__layout_sidebar {
+    flex-basis: 40%;
+  }
+
+  .app__layout_content {
+    flex-basis: 60%;
+  }
+}

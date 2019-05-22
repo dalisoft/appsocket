@@ -1,8 +1,9 @@
 import Layout from './layout.html.jsx';
+import { Provider } from 'unistore/react';
+import { store } from './store';
 
-export default () => (
-  <Layout>
-    <span>Index</span>
-    <a href="/about">About</a>
-  </Layout>
-);
+export default React.memo(() => (
+  <Provider store={store}>
+    <Layout />
+  </Provider>
+));

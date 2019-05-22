@@ -1,7 +1,6 @@
 {
-  "name": "charge-dev-env",
+  "name": "websocket-client-app",
   "version": "0.1.0",
-  "private": true,
   "sideEffects": false,
   "devDependencies": {
     "@static/charge": "^1.4.0",
@@ -26,5 +25,9 @@
     "lint": "eslint ./src/*.jsx",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "unistore": "^3.4.1"
   }
 }
