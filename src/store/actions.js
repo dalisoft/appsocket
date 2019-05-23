@@ -29,10 +29,7 @@ export default (store) => ({
 				host: '',
 				port: 80,
 				path: '/websocket',
-				cache: {
-					responses: [],
-					messages: []
-				}
+				messages: []
 			}
 		]
 	}),

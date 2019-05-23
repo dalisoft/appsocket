@@ -67,7 +67,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 	);
 };
 
-const Content = ({ cache, actions, connection }) =>
+const Content = ({ actions, connection }) =>
 	(connection && connection.id !== undefined && <Toolbar {...connection} actions={actions} key="content" />) || null;
 
 const ContentWrapper = ({ connections, ...actions }) => (
