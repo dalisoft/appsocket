@@ -1,12 +1,9 @@
-import Preact from 'preact';
 import { connect } from 'unistore/preact';
 import { actions } from '../../store';
 import cx from 'classnames';
 
 const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ...props }) => {
-	const [isConnected, setConnect] = Preact.useState(connected);
 	const handleChange = (key) => (e) => {
-		setConnect(false);
 		actions.setConnectionValue(id, 'connected', false);
 		actions.setConnectionValue(id, key, key === 'reconnect' ? e.target.checked : e.target.value);
 	};
@@ -62,7 +59,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				name="connect"
 				key="connect-button"
 				type="button"
-				className={cx('input--default input__connect', { 'input__connect-active': isConnected })}
+				className={cx('input--default input__connect', { 'input__connect-active': connected })}
 			>
         Connect
 			</button>
