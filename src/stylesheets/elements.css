@@ -1,78 +1,75 @@
 /* stylelint-disable property-no-vendor-prefix */
 .input--default {
-  background-clip: padding-box;
-  background-color: rgb(245, 245, 245);
-  border: solid 1px #ddd;
-  border: solid 2px rgba(255, 255, 255, 0);
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  padding: 8px 12px;
-  transition: all 200ms ease-out;
+	background-color: rgba(245, 245, 245, 0.85);
+	border: solid 2px rgba(255, 255, 255, 0);
+	border-radius: 1rem;
+	font-size: 0.75rem;
+	padding: 8px 12px;
+	transition: all 200ms ease-out;
 }
 
 .input--default:hover {
-  border-color: #ccc;
+	border-color: #ccc;
 }
 
 .input--default:focus {
-  box-shadow: none;
-  outline: none;
+	box-shadow: none;
+	outline: none;
 }
 
 .input--default:not(.input__connect):focus {
-  border-color: #aaa;
+	border-color: #aaa;
 }
 
 .input__connect {
-  background-color: #eee;
-  cursor: pointer;
+	background-color: #eee;
+	cursor: pointer;
 }
 
 .input__connect:hover {
-  border-color: #aaa;
+	border-color: #aaa;
 }
 
 .input__connect-active {
-  background-color: #ccc;
-  border-color: #999;
+	background-color: #ccc;
+	border-color: #999;
 }
 
 .input__ws-type {
-  -webkit-appearance: none;
-  cursor: pointer;
+	-webkit-appearance: none;
+	cursor: pointer;
 }
 
 .input__host {
-  width: 60%;
+	width: 55%;
 }
 
 .input__port {
-  width: 7%;
+	width: 7%;
 }
 
 .input__path {
-  width: 10%;
+	width: 10%;
 }
 
 .input__reconnect {
-  display: none;
+	display: none;
 }
 
 .input__reconnect-btn {
-  cursor: pointer;
+	cursor: pointer;
 }
 
-.input__reconnect:checked + .input__reconnect-btn {
-  background-color: #ccc;
-  border-color: #999;
+.input__reconnect:checked + .input__reconnect-btn .input__connect {
+	background-color: #ccc;
+	border-color: #999;
 }
 
 .toolbar-form {
-  background-color: #ddd;
-  border-bottom: solid 1px #ccc;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 16px 8px;
+	background-color: #ddd;
+	border-bottom: solid 1px #ccc;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 16px 8px;
 }

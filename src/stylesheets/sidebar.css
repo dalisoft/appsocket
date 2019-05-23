@@ -1,126 +1,156 @@
 /* stylelint-disable selector-class-pattern */
 
 .app-layout__sidebar {
-  border-right: solid 0.5pt #ccc;
-  flex-basis: 20%;
-  padding: 1.25vh 0.75vw;
+	border-right: solid 0.5pt #ccc;
+	flex-basis: 20%;
+	padding: 1.25vh 0.75vw;
+	position: relative;
+}
+
+.app-layout__sidebar > * {
+	transition: all 200ms ease-out;
 }
 
 .app-sidebar__connection {
-  background-clip: padding-box;
-  background-color: rgba(0, 203, 224, 0.49);
-  border: solid 2px rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 2vh;
-  justify-content: space-around;
-  min-height: 50px;
-  overflow: hidden;
-  padding: 6px 10px;
-  position: relative;
-  transition: all 200ms ease-in;
-  width: 100%;
+	background-color: rgba(0, 203, 224, 0.49);
+	border: solid 2px rgba(255, 255, 255, 0);
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: 2vh;
+	justify-content: space-around;
+	min-height: 50px;
+	overflow: hidden;
+	padding: 6px 10px;
+	position: relative;
+	width: 100%;
 }
 
 .app-sidebar__connection > * {
-  cursor: default;
-  transition: all 300ms ease-out;
+	cursor: default;
+	transition: all 300ms ease-in;
 }
 
 .app-sidebar__connection:not(:last-child) {
-  margin-bottom: 1.5vh;
+	margin-bottom: 1.5vh;
 }
 
+.app-sidebar__connection-connected {
+	border-color: rgb(20, 183, 210);
+}
 .app-sidebar__connection-active {
-  border-color: rgb(20, 183, 210);
+	background-color: rgba(0, 203, 224, 0.89);
 }
 
 .app-sidebar__connection-secure {
-  background-color: rgba(10, 181, 0, 0.22);
+	background-color: rgba(10, 181, 0, 0.22);
 }
 
+.app-sidebar__connection-secure.app-sidebar__connection-connected {
+	border-color: rgba(13, 142, 61, 0.63);
+}
 .app-sidebar__connection-secure.app-sidebar__connection-active {
-  border-color: rgba(13, 142, 61, 0.63);
+	background-color: rgba(10, 181, 0, 0.62);
 }
 
 .app-sidebar__connection--port,
 .app-sidebar__connection--close {
-  position: absolute;
-  right: 2px;
-  top: 2px;
-  z-index: 1;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	z-index: 1;
 }
 
 .app-sidebar__connection--host {
-  font-size: 0.9rem;
+	font-size: 0.9rem;
 }
 
 .app-sidebar__connection--port {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
-  color: rgba(0, 0, 0, 0.75);
-  font-size: 0.75rem;
-  padding: 2px 4px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 5px;
+	color: rgba(0, 0, 0, 0.75);
+	font-size: 0.75rem;
+	padding: 2px 4px;
 }
 
 .app-sidebar__connection--port:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .app-sidebar__connection--path {
-  color: rgba(0, 0, 0, 0.45);
-  font-size: 0.75rem;
-  font-weight: 400;
+	color: rgba(0, 0, 0, 0.45);
+	font-size: 0.75rem;
+	font-weight: 400;
 }
 
 .app-sidebar__connection--reconnect {
-  background-size: cover;
-  bottom: -4px;
-  height: 53px;
-  opacity: 0;
-  position: absolute;
-  right: 3px;
-  transform: rotate(90deg) scale(1.5);
-  width: 53px;
+	background-image: url('../assets/reconnect.svg');
+	background-size: cover;
+	bottom: -4px;
+	height: 53px;
+	opacity: 0;
+	position: absolute;
+	right: 3px;
+	transform: rotate(90deg) scale(1.5);
+	width: 53px;
 }
 
 .app-sidebar__connection--reconnect-active {
-  opacity: 0.15;
-  transform: rotate(0) scale(1);
+	opacity: 0.15;
+	transform: rotate(0) scale(1);
 }
 
 .app-sidebar__connection--close {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  bottom: 2px;
-  color: rgba(0, 0, 0, 0.45);
-  cursor: grab;
-  height: 1.25rem;
-  line-height: 1.25rem;
-  text-align: center;
-  top: auto;
-  vertical-align: middle;
-  width: 1.25rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 4px;
+	bottom: 2px;
+	color: rgba(0, 0, 0, 0.45);
+	cursor: grab;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	text-align: center;
+	top: auto;
+	vertical-align: middle;
+	width: 1.25rem;
 }
 
 .app-sidebar__connection--close:hover {
-  transform: scale(1.15);
+	transform: scale(1.15);
 }
 
 .app-sidebar__connection--close:active {
-  transform: scale(0.85);
+	transform: scale(0.85);
 }
 
 .app-sidebar__connection--host,
 .app-sidebar__connection--path {
-  border-radius: 4px;
-  margin-right: auto;
-  padding: 2px 6px;
+	border-radius: 4px;
+	margin-right: auto;
+	padding: 2px 6px;
 }
 
 .app-sidebar__connection--host:hover,
 .app-sidebar__connection--path:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+.app-layout__sidebar--add-connection {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ddd;
+	text-align: center;
+	font-size: 0.75rem;
+	padding: 4px 0;
+	cursor: pointer;
+	border-top: solid 1px #ccc;
+}
+
+.app-layout__sidebar--add-connection:hover {
+	background-color: #ccc;
+}
+.app-layout__sidebar--add-connection:active {
+	background-color: #bbb;
 }

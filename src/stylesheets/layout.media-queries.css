@@ -1,133 +1,133 @@
 /* stylelint-disable selector-class-pattern */
 
 @media (min-width: 2560px) {
-  .app-layout__sidebar {
-    flex-basis: 10%;
-  }
+	.app-layout__sidebar {
+		flex-basis: 10%;
+	}
 
-  .app-layout__content {
-    flex-basis: 90%;
-  }
+	.app-layout__content {
+		flex-basis: 90%;
+	}
 }
 
 @media (min-width: 1919px) and (max-width: 2559px) {
-  .app-layout__sidebar {
-    flex-basis: 15%;
-  }
+	.app-layout__sidebar {
+		flex-basis: 15%;
+	}
 
-  .app-layout__content {
-    flex-basis: 85%;
-  }
+	.app-layout__content {
+		flex-basis: 85%;
+	}
 }
 
 @media (min-width: 1029px) and (max-width: 1279px) {
-  .input__host {
-    width: 52%;
-  }
+	.input__host {
+		width: 47%;
+	}
 
-  .input__port {
-    width: 8%;
-  }
+	.input__port {
+		width: 8%;
+	}
 
-  .input__path {
-    width: 11%;
-  }
+	.input__path {
+		width: 11%;
+	}
 }
 
 @media (min-width: 970px) and (max-width: 1028px) {
-  .input__host {
-    width: 50%;
-  }
+	.input__host {
+		width: 45%;
+	}
 
-  .input__port {
-    width: 8%;
-  }
+	.input__port {
+		width: 8%;
+	}
 
-  .input__path {
-    width: 12%;
-  }
+	.input__path {
+		width: 12%;
+	}
 }
 
 @media (min-width: 747px) and (max-width: 969px) {
-  .app-layout__sidebar {
-    flex-basis: 30%;
-  }
+	.app-layout__sidebar {
+		flex-basis: 30%;
+	}
 
-  .app-layout__content {
-    flex-basis: 70%;
-  }
+	.app-layout__content {
+		flex-basis: 70%;
+	}
 
-  .input--default {
-    padding: 6px 10px;
-  }
+	.input--default {
+		padding: 6px 10px;
+	}
 
-  .input__host {
-    width: 25%;
-  }
+	.input__host {
+		width: 20%;
+	}
 
-  .input__port {
-    width: 12%;
-  }
+	.input__port {
+		width: 12%;
+	}
 
-  .input__path {
-    width: 18%;
-  }
+	.input__path {
+		width: 18%;
+	}
 }
 
 @media (min-width: 640px) and (max-width: 746px) {
-  .app-layout__sidebar {
-    flex-basis: 30%;
-  }
+	.app-layout__sidebar {
+		flex-basis: 30%;
+	}
 
-  .app-layout__content {
-    flex-basis: 70%;
-  }
+	.app-layout__content {
+		flex-basis: 70%;
+	}
 
-  .input--default {
-    font-size: 0.7rem;
-    padding: 4px 8px;
-  }
+	.input--default {
+		font-size: 0.7rem;
+		padding: 4px 8px;
+	}
 
-  .input__host {
-    width: 24%;
-  }
+	.input__host {
+		width: 19%;
+	}
 
-  .input__port {
-    width: 12%;
-  }
+	.input__port {
+		width: 12%;
+	}
 
-  .input__path {
-    width: 19%;
-  }
+	.input__path {
+		width: 19%;
+	}
 }
 
 @media (max-width: 639px) {
-  .app-layout__sidebar {
-    flex-basis: 30%;
-  }
+	.app-layout__sidebar {
+		flex-basis: 30%;
+	}
 
-  .app-layout__content {
-    flex-basis: 70%;
-  }
+	.app-layout__content {
+		flex-basis: 70%;
+	}
 
-  .input--default {
-    font-size: 0.7rem;
-    padding: 4px 8px;
-  }
+	.input--default {
+		font-size: 0.7rem;
+		padding: 4px 8px;
+	}
 
-  .input__reconnect-btn {
-    display: none;
-  }
+	.input__reconnect-btn {
+		display: none;
+	}
 
-  .input__host {
-    width: 30%;
-  }
+	.input__host {
+		width: 25%;
+	}
 
-  .input__port {
-    width: 12%;
-  }
+	.input__port {
+		width: 12%;
+	}
 
-  .input__path {
-    width: 20%;
-  }
+	.input__path {
+		width: 20%;
+	}
 }

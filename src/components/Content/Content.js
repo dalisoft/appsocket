@@ -8,7 +8,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 		actions.setConnectionValue(id, key, key === 'reconnect' ? e.target.checked : e.target.value);
 	};
 	return (
-		<form className="toolbar-form">
+		<div className="toolbar-form">
 			<select
 				name="type"
 				key="ws-type-field"
@@ -25,7 +25,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				value={host}
 				className="input--default input__host"
 				placeholder="Websocket host"
-				onChange={handleChange('host')}
+				onInput={handleChange('host')}
 			/>
 			<input
 				name="port"
@@ -33,7 +33,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				value={port}
 				className="input--default input__port"
 				placeholder="Websocket port"
-				onChange={handleChange('port')}
+				onInput={handleChange('port')}
 			/>
 			<input
 				name="path"
@@ -41,7 +41,7 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				value={path}
 				className="input--default input__path"
 				placeholder="Websocket path"
-				onChange={handleChange('path')}
+				onInput={handleChange('path')}
 			/>
 			<input
 				id="reconnect-websocket"
@@ -52,8 +52,8 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				checked={reconnect}
 				onChange={handleChange('reconnect')}
 			/>
-			<label htmlFor="reconnect-websocket" className="input--default input__connect input__reconnect-btn">
-        Reconnect
+			<label htmlFor="reconnect-websocket" className="input__reconnect-btn">
+				<button className="input--default input__connect">Reconnect</button>
 			</label>
 			<button
 				name="connect"
@@ -61,9 +61,9 @@ const Toolbar = ({ id, type, host, port, path, reconnect, connected, actions, ..
 				type="button"
 				className={cx('input--default input__connect', { 'input__connect-active': connected })}
 			>
-        Connect
+				Connect
 			</button>
-		</form>
+		</div>
 	);
 };
 
