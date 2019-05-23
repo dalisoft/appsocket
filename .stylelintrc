@@ -1,3 +1,11 @@
 {
-  "extends": "stylelint-config-sass-guidelines"
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
+    }
+  }
 }

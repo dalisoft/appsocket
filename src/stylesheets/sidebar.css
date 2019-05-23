@@ -1,61 +1,63 @@
 /* stylelint-disable selector-class-pattern */
 
-.app__layout_sidebar {
+.app-layout__sidebar {
   border-right: solid 0.5pt #999;
   flex-basis: 20%;
   padding: 1.25vh 0.75vw;
 }
 
-.app__sidebar_connection {
+.app-sidebar__connection {
+  background-clip: padding-box;
   background-color: rgba(0, 203, 224, 0.49);
   border: solid 2px rgba(255, 255, 255, 0);
   border-radius: 5px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 50px;
+  height: 2vh;
   justify-content: space-around;
+  min-height: 50px;
   overflow: hidden;
-  padding: 4px 8px;
+  padding: 6px 10px;
   position: relative;
   transition: all 200ms ease-in;
   width: 100%;
 }
 
-.app__sidebar_connection > * {
+.app-sidebar__connection > * {
   cursor: default;
   transition: all 300ms ease-out;
 }
 
-.app__sidebar_connection:not(:last-child) {
+.app-sidebar__connection:not(:last-child) {
   margin-bottom: 1.5vh;
 }
 
-.app__sidebar_connection-active {
-  border-color: rgba(14, 149, 152, 0.97);
+.app-sidebar__connection-active {
+  border-color: rgb(20, 183, 210);
 }
 
-.app__sidebar_connection-secure {
+.app-sidebar__connection-secure {
   background-color: rgba(10, 181, 0, 0.22);
 }
 
-.app__sidebar_connection-secure.app__sidebar_connection-active {
+.app-sidebar__connection-secure.app-sidebar__connection-active {
   border-color: rgba(13, 142, 61, 0.63);
 }
 
-.app__sidebar_connection_port,
-.app__sidebar_connection_close {
+.app-sidebar__connection--port,
+.app-sidebar__connection--close {
   position: absolute;
   right: 2px;
   top: 2px;
   z-index: 1;
 }
 
-.app__sidebar_connection_host {
+.app-sidebar__connection--host {
   font-size: 0.9rem;
 }
 
-.app__sidebar_connection_port {
+.app-sidebar__connection--port {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 5px;
   color: rgba(0, 0, 0, 0.75);
@@ -63,18 +65,17 @@
   padding: 2px 4px;
 }
 
-.app__sidebar_connection_port:hover {
+.app-sidebar__connection--port:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.app__sidebar_connection_path {
+.app-sidebar__connection--path {
   color: rgba(0, 0, 0, 0.45);
   font-size: 0.75rem;
   font-weight: 400;
 }
 
-.app__sidebar_connection_reconnect {
-  background-image: url('/icons/reconnect.svg');
+.app-sidebar__connection--reconnect {
   background-size: cover;
   bottom: -4px;
   height: 53px;
@@ -85,12 +86,12 @@
   width: 53px;
 }
 
-.app__sidebar_connection_reconnect-active {
+.app-sidebar__connection--reconnect-active {
   opacity: 0.15;
   transform: rotate(0) scale(1);
 }
 
-.app__sidebar_connection_close {
+.app-sidebar__connection--close {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   bottom: 2px;
@@ -104,22 +105,22 @@
   width: 1.25rem;
 }
 
-.app__sidebar_connection_close:hover {
+.app-sidebar__connection--close:hover {
   transform: scale(1.15);
 }
 
-.app__sidebar_connection_close:active {
+.app-sidebar__connection--close:active {
   transform: scale(0.85);
 }
 
-.app__sidebar_connection_host,
-.app__sidebar_connection_path {
+.app-sidebar__connection--host,
+.app-sidebar__connection--path {
   border-radius: 4px;
   margin-right: auto;
   padding: 2px 6px;
 }
 
-.app__sidebar_connection_host:hover,
-.app__sidebar_connection_path:hover {
+.app-sidebar__connection--host:hover,
+.app-sidebar__connection--path:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }

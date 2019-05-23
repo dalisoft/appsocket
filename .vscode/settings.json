@@ -8,9 +8,9 @@
   "eslint.enable": true,
   "eslint.packageManager": "npm",
   "files.associations": {
-    "*.js": "javascript",
-    "*.jsx": "javascriptreact",
-    "*rc": "json"
+    "*.js": "javascriptreact",
+    "*rc": "json",
+    "*.css": "css"
   },
   "tslint.jsEnable": false,
   "typescript.tsdk": null,

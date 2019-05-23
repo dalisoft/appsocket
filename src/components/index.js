@@ -1,4 +1,4 @@
-import Sidebar from './Sidebar/Sidebar.html.jsx';
-import Content from './Content/Content.html.jsx';
+import Sidebar from './Sidebar/Sidebar';
+import Content from './Content/Content';
 
 export { Sidebar, Content };

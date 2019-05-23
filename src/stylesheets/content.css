@@ -1,6 +1,6 @@
 /* stylelint-disable selector-class-pattern */
 
-.app__layout_content {
+.app-layout__content {
   background-color: rgb(225, 225, 225);
   flex-basis: 80%;
 }

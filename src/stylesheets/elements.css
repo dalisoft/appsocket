@@ -1,0 +1,78 @@
+/* stylelint-disable property-no-vendor-prefix */
+.input--default {
+  background-clip: padding-box;
+  background-color: rgb(245, 245, 245);
+  border: solid 1px #ddd;
+  border: solid 2px rgba(255, 255, 255, 0);
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  padding: 8px 12px;
+  transition: all 200ms ease-out;
+}
+
+.input--default:hover {
+  border-color: #ccc;
+}
+
+.input--default:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.input--default:not(.input__connect):focus {
+  border-color: #aaa;
+}
+
+.input__connect {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.input__connect:hover {
+  border-color: #aaa;
+}
+
+.input__connect-active {
+  background-color: #ccc;
+  border-color: #999;
+}
+
+.input__ws-type {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.input__host {
+  width: 60%;
+}
+
+.input__port {
+  width: 7%;
+}
+
+.input__path {
+  width: 10%;
+}
+
+.input__reconnect {
+  display: none;
+}
+
+.input__reconnect-btn {
+  cursor: pointer;
+}
+
+.input__reconnect:checked + .input__reconnect-btn {
+  background-color: #ccc;
+  border-color: #999;
+}
+
+.toolbar-form {
+  background-color: #ddd;
+  border-bottom: solid 1px #ccc;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 16px 8px;
+}

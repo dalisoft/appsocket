@@ -1,4 +1,4 @@
-import Layout from './layout.html.jsx';
+import Layout from './layout.js/index.js';
 import { Provider } from 'unistore/react';
 import { store } from './store';
 

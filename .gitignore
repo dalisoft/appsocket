@@ -27,3 +27,5 @@ __snapshots__
 .docz
 
 /tmp
+.next
+/dist
