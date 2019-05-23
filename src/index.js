@@ -1,9 +1,11 @@
-import Layout from './layout.js/index.js';
-import { Provider } from 'unistore/react';
+import Layout from './components/Layout';
+import { Provider } from 'unistore/preact';
 import { store } from './store';
 
-export default React.memo(() => (
-  <Provider store={store}>
-    <Layout />
-  </Provider>
-));
+const App = () => (
+	<Provider store={store}>
+		<Layout />
+	</Provider>
+);
+
+export default App;

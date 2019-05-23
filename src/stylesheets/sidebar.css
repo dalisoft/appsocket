@@ -1,7 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 
 .app-layout__sidebar {
-  border-right: solid 0.5pt #999;
+  border-right: solid 0.5pt #ccc;
   flex-basis: 20%;
   padding: 1.25vh 0.75vw;
 }
