@@ -26,7 +26,7 @@
 
 .app__messages__message--item {
 	padding: 4px 8px;
-	background-color: #ddd;
+	background-color: #d5d5d5;
 	font-size: 0.75rem;
 }
 .app__messages__message--item:nth-of-type(odd) {
