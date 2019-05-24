@@ -1,6 +1,8 @@
 import { useState } from 'preact/hooks';
 import cx from 'classnames';
 
+import ws from '../../websockets';
+
 const MessageFormBar = ({ id, actions }) => {
 	const [messageText, setMessage] = useState('');
 	const [fieldError, setFieldError] = useState(false);
@@ -11,6 +13,15 @@ const MessageFormBar = ({ id, actions }) => {
 	function handleMessageSend(e) {
 		e.preventDefault();
 		if (messageText.length > 0) {
+			let socket = ws[id];
+			if (socket) {
+				if (socket.readyState === socket.OPEN) {
+					socket.send(messageText);
+				}
+				else {
+					console.error('Connection was closed before message sent');
+				}
+			}
 			actions.pushMessage(id, 'output', messageText);
 			setMessage('');
 			setFieldError(false);

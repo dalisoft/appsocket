@@ -1,6 +1,9 @@
 import cx from 'classnames';
+import ws from '../../websockets';
+import connectWebSocket from '../../helpers/connect-ws';
 
 const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions }) => {
+	let socket = ws[id];
 	const handleChange = (key) => (e) => {
 		e.stopPropagation();
 		let { value } = e.target;
@@ -9,11 +12,57 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 			value = !reconnect;
 		}
 		actions.setConnectionValue(id, key, value);
-		actions.setConnectionValue(id, 'connected', false);
+
+		if (connected) {
+			socket = ws[id];
+			if (socket) {
+				if (socket.readyState === socket.OPEN) {
+					ws[id].close(1000);
+				}
+				return;
+			}
+		}
 	};
 	function handleConnect(e) {
 		e.preventDefault();
-		console.log('submit called');
+
+		if (connected) {
+			socket = ws[id];
+			if (socket) {
+				if (socket.readyState === socket.OPEN) {
+					ws[id].close();
+				}
+				return;
+			}
+		}
+
+		let url = type;
+		url += '://';
+		url += host;
+		url += port;
+		url += path;
+
+		socket = connectWebSocket(
+			id,
+			url,
+			{
+				open() {
+					actions.setConnectionValue(id, 'connected', true);
+				},
+				close() {
+					actions.setConnectionValue(id, 'connected', false);
+				},
+				message(e) {
+					actions.pushMessage(id, 'input', e.data);
+				}
+			},
+			reconnect
+		);
+	}
+
+	if (connected && (!socket || socket.readyState !== socket.OPEN)) {
+		actions.setConnectionValue(id, 'connected', false);
+		connected = false;
 	}
 
 	return (
@@ -33,7 +82,7 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 				key="host-field"
 				value={host}
 				className="app__layout--form-input app__layout--form-input-host"
-				placeholder="Websocket host"
+				placeholder="Host"
 				onInput={handleChange('host')}
 			/>
 			<input
@@ -41,7 +90,7 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 				key="port-field"
 				value={port}
 				className="app__layout--form-input app__layout--form-input-port"
-				placeholder="Websocket port"
+				placeholder="Port"
 				onInput={handleChange('port')}
 			/>
 			<input
@@ -49,7 +98,7 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 				key="path-field"
 				value={path}
 				className="app__layout--form-input app__layout--form-input-path"
-				placeholder="Websocket path"
+				placeholder="Path"
 				onInput={handleChange('path')}
 			/>
 			<button
