@@ -34,8 +34,8 @@ This app uses your system default browser engine, if you use macOS, then app emb
 
 ## TO-DO
 
-- [ ] Implement Load Session
-- [ ] Implement Save session
+- [ ] Implement Load Session (idea done, just has some work for make it work)
+- [ ] Implement Save session (idea done, just has some work for make it work)
 
 ## Credits
 
