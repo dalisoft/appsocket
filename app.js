@@ -32,7 +32,12 @@ if (process.platform === 'darwin') {
 }
 
 app.once('ready', () => {
-	let win = new BrowserWindow({ title: 'AppSocket', minWidth: 360, minHeight: 400 });
+	let win = new BrowserWindow({
+		title: 'AppSocket',
+		minWidth: 360,
+		minHeight: 400,
+		icon: 'build/assets/favicon.ico'
+	});
 	win.loadFile('build/index.html');
 
 	win.on('closed', () => {
