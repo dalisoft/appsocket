@@ -8,7 +8,7 @@ const Content = ({ actions, connection }) =>
 	(connection && connection.id !== undefined && (
 		<Fragment key="content-fragment">
 			<AddressBar {...connection} actions={actions} key="content" />
-			{connection.messages && <MessagesList messages={connection.messages} key="messages" />}
+			{connection.messages && <MessagesList messages={connection.messages} key="messages-list" />}
 			<MessagesFormBar id={connection.id} actions={actions} key="app__messages__message--send-bar" />
 		</Fragment>
 	)) ||

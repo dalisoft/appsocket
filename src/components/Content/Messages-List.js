@@ -5,7 +5,13 @@ const renderRow = (row) => (
 );
 
 const MessagesList = ({ messages }) => (
-	<VirtualList data={messages} className="app__messages__list" renderRow={renderRow} rowHeight={23} />
+	<VirtualList
+		data={messages}
+		className="app__messages__list"
+		renderRow={renderRow}
+		rowHeight={23}
+		key="messages-vlist"
+	/>
 );
 
 export default MessagesList;

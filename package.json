@@ -3,12 +3,14 @@
   "name": "websocket-osx-app",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "app.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "run-app": "deskgap ."
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -23,6 +25,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "deskgap": "^0.1.0",
     "preact": "^10.0.0-beta.1",
     "preact-virtual-list": "^0.3.1",
     "unistore": "^3.4.1"
