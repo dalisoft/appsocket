@@ -1,5 +1,5 @@
 /* stylelint-disable property-no-vendor-prefix */
-.input--default {
+.app__layout--form-input {
 	background-color: rgba(245, 245, 245, 0.85);
 	border: solid 2px rgba(255, 255, 255, 0);
 	border-radius: 1rem;
@@ -8,64 +8,66 @@
 	transition: all 200ms ease-out;
 }
 
-.input--default:hover {
+.app__layout--form-input-error {
+	border-color: #b3404a !important;
+}
+
+.app__layout--form-input:hover {
 	border-color: #ccc;
 }
 
-.input--default:focus {
+.app__layout--form-input:focus,
+.app__layout--form-input:active {
 	box-shadow: none;
 	outline: none;
+	color: inherit;
 }
 
-.input--default:not(.input__connect):focus {
+.app__layout--form-input:not(.app__layout--form-input-connect):focus {
 	border-color: #aaa;
 }
 
-.input__connect {
+.app__layout--form-input-connect {
 	background-color: #eee;
 	cursor: pointer;
 }
 
-.input__connect:hover {
+.app__layout--form-input-connect:hover {
 	border-color: #aaa;
 }
 
-.input__connect-active {
+.app__layout--form-input-connect-active {
 	background-color: #ccc;
 	border-color: #999;
 }
 
-.input__ws-type {
+.app__layout--form-input-ws-type {
 	-webkit-appearance: none;
 	cursor: pointer;
 }
 
-.input__host {
+.app__layout--form-input-host {
 	width: 55%;
 }
 
-.input__port {
+.app__layout--form-input-port {
 	width: 7%;
 }
 
-.input__path {
+.app__layout--form-input-path {
 	width: 10%;
 }
 
-.input__reconnect {
-	display: none;
+.app__layout--form-input-msg {
+	width: 90%;
 }
 
-.input__reconnect-btn {
-	cursor: pointer;
-}
-
-.input__reconnect:checked + .input__reconnect-btn .input__connect {
+.app__layout--form-input-connect-active {
 	background-color: #ccc;
 	border-color: #999;
 }
 
-.toolbar-form {
+.app__layout--form {
 	background-color: #ddd;
 	border-bottom: solid 1px #ccc;
 	display: flex;

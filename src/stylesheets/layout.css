@@ -21,8 +21,7 @@
 	transition: all 200ms ease-out;
 }
 
-.app-layout__sidebar,
-.app-layout__content > *:not(:first-child) {
+.app-layout__sidebar {
 	overflow-y: auto;
 	padding: 1vh 2vw;
 }

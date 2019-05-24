@@ -21,29 +21,37 @@
 }
 
 @media (min-width: 1029px) and (max-width: 1279px) {
-	.input__host {
+	.app__layout--form-input-host {
 		width: 47%;
 	}
 
-	.input__port {
+	.app__layout--form-input-msg {
+		width: 90%;
+	}
+
+	.app__layout--form-input-port {
 		width: 8%;
 	}
 
-	.input__path {
+	.app__layout--form-input-path {
 		width: 11%;
 	}
 }
 
 @media (min-width: 970px) and (max-width: 1028px) {
-	.input__host {
+	.app__layout--form-input-host {
 		width: 45%;
 	}
 
-	.input__port {
+	.app__layout--form-input-msg {
+		width: 88%;
+	}
+
+	.app__layout--form-input-port {
 		width: 8%;
 	}
 
-	.input__path {
+	.app__layout--form-input-path {
 		width: 12%;
 	}
 }
@@ -57,19 +65,23 @@
 		flex-basis: 70%;
 	}
 
-	.input--default {
+	.app__layout--form-input {
 		padding: 6px 10px;
 	}
 
-	.input__host {
+	.app__layout--form-input-host {
 		width: 20%;
 	}
 
-	.input__port {
+	.app__layout--form-input-msg {
+		width: 86%;
+	}
+
+	.app__layout--form-input-port {
 		width: 12%;
 	}
 
-	.input__path {
+	.app__layout--form-input-path {
 		width: 18%;
 	}
 }
@@ -83,20 +95,24 @@
 		flex-basis: 70%;
 	}
 
-	.input--default {
+	.app__layout--form-input {
 		font-size: 0.7rem;
 		padding: 4px 8px;
 	}
 
-	.input__host {
+	.app__layout--form-input-host {
 		width: 19%;
 	}
 
-	.input__port {
+	.app__layout--form-input-msg {
+		width: 84%;
+	}
+
+	.app__layout--form-input-port {
 		width: 12%;
 	}
 
-	.input__path {
+	.app__layout--form-input-path {
 		width: 19%;
 	}
 }
@@ -110,24 +126,28 @@
 		flex-basis: 70%;
 	}
 
-	.input--default {
+	.app__layout--form-input {
 		font-size: 0.7rem;
 		padding: 4px 8px;
 	}
 
-	.input__reconnect-btn {
+	.app__layout--form-input-reconnect-btn {
 		display: none;
 	}
 
-	.input__host {
+	.app__layout--form-input-host {
 		width: 25%;
 	}
 
-	.input__port {
+	.app__layout--form-input-msg {
+		width: 80%;
+	}
+
+	.app__layout--form-input-port {
 		width: 12%;
 	}
 
-	.input__path {
+	.app__layout--form-input-path {
 		width: 20%;
 	}
 }

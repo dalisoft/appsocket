@@ -1,6 +1,49 @@
 /* stylelint-disable selector-class-pattern */
 
 .app-layout__content {
-  background-color: rgb(225, 225, 225);
-  flex-basis: 80%;
+	background-color: rgb(225, 225, 225);
+	flex-basis: 80%;
+	display: flex;
+	flex-flow: column;
+}
+
+.app__layout--form.app__messages__message--send-bar {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: none;
+	border-top: solid 1px #bbb;
+	background-color: rgb(211, 211, 211);
+	margin-top: auto;
+}
+
+.app__messages__list {
+	flex-grow: 1;
+	display: flex;
+	padding: 0;
+	overflow-y: auto;
+	position: relative;
+}
+
+.app__messages__message--item {
+	padding: 4px 8px;
+	background-color: #ddd;
+	font-size: 0.75rem;
+}
+.app__messages__message--item:nth-of-type(odd) {
+	background-color: #eee;
+}
+
+.app__messages__message--item-input,
+.app__messages__message--item-output {
+	background-size: auto 90%;
+	background-repeat: no-repeat;
+	background-position: 98% center;
+}
+
+.app__messages__message--item-input {
+	background-image: url('../assets/download.svg');
+}
+
+.app__messages__message--item-output {
+	background-image: url('../assets/upload.svg');
 }

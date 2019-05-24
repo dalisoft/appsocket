@@ -1,5 +1,5 @@
-import Sidebar from './Sidebar/Sidebar';
-import Content from './Content/Content';
+import Sidebar from './Sidebar';
+import Content from './Content';
 import LayoutToggler from './Layout-Toggler';
 
 export { Sidebar, Content, LayoutToggler };

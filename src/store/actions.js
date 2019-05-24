@@ -33,6 +33,18 @@ export default (store) => ({
 			}
 		]
 	}),
+	pushMessage: (state, id, type, message) => ({
+		...state,
+		connections: state.connections.map((connection) => {
+			if (connection.id === id) {
+				connection.messages.push({
+					type,
+					message
+				});
+			}
+			return connection;
+		})
+	}),
 	deleteConnection: (state, id) => ({
 		...state,
 		connections: state.connections.filter((connection) => connection.id !== id)
