@@ -19,7 +19,11 @@ Lightweight, fast & simple WebSocket client
 
 ## Credits
 
-<div>Icons and/or Logo made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+### Icons
+
+Icons and/or Logo made by [Freepik](https://www.freepik.com/) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
+
+### Libraries
 
 - DeskApp (@patr0nus)
 - Preact and Unistore (@developit)
