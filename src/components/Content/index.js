@@ -4,9 +4,7 @@ import { actions } from '../../store';
 import Content from './Content';
 
 const ContentWrapper = ({ connections, ...actions }) => (
-	<main className="app-layout__content">
-		<Content connection={connections.find((conn) => conn.active)} actions={actions} key="content-wrapped" />
-	</main>
+	<Content connection={connections.find((conn) => conn.active)} actions={actions} key="content-wrapped" />
 );
 
 const enhance = connect(
