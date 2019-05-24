@@ -12,6 +12,26 @@ Lightweight, fast & simple WebSocket client
 - LocalStorage saving
 - Cross-browser (if you want use web-version)
 
+## Installing
+
+```bash
+npm i
+```
+
+And that's all, nothing more need
+
+## Running app
+
+```bash
+npm run app
+```
+
+**Note**: _App runs in production mode, so, any changes related to code not trigger app changes_
+
+## Rendering
+
+This app uses your system default browser engine, if you use macOS, then app embeds Safari or if you using Windows 10, then it embeds Microsoft Edge browser and so on.
+
 ## TO-DO
 
 - [ ] Implement Load Session

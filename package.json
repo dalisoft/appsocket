@@ -6,11 +6,11 @@
   "main": "app.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build",
-    "serve": "preact build && preact serve",
+    "build": "rm -rf build && preact build",
+    "serve": "npm run build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "run-app": "deskgap ."
+    "app": "npm run build && deskgap ."
   },
   "devDependencies": {
     "eslint": "^5.16.0",
