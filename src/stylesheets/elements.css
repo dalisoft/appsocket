@@ -5,7 +5,8 @@
 	border-radius: 1rem;
 	font-size: 0.75rem;
 	padding: 8px 12px;
-	transition: all 200ms ease-out;
+	transition: 200ms ease-out;
+	transition-property: background-color, border-color;
 }
 
 .app__layout--form-input-error {

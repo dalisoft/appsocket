@@ -151,3 +151,18 @@
 		width: 20%;
 	}
 }
+
+@media (max-width: 480px) {
+	.app-layout__sidebar {
+		flex-basis: 0%;
+		padding: 0;
+	}
+
+	.app-layout__content {
+		flex-basis: 100%;
+	}
+
+	.app-layout--toggler {
+		display: none;
+	}
+}

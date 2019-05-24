@@ -1,7 +1,7 @@
 {
-  "private": true,
-  "name": "websocket-osx-app",
-  "version": "0.0.0",
+  "name": "appsocket",
+  "version": "0.0.1",
+  "description": "Lightweight, fast & simple WebSocket client",
   "license": "MIT",
   "main": "app.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
-	"name": "websocket-osx-app",
-	"short_name": "websocket-osx-app",
+	"name": "AppSocket",
+	"short_name": "AppSocket",
 	"start_url": "/",
 	"display": "standalone",
 	"orientation": "portrait",

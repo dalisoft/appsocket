@@ -39,7 +39,7 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 		let url = type;
 		url += '://';
 		url += host;
-		url += port;
+		url += port ? ':' + port : '';
 		url += path;
 
 		socket = connectWebSocket(
@@ -102,7 +102,7 @@ const AddressBar = ({ id, type, host, port, path, reconnect, connected, actions 
 				onInput={handleChange('path')}
 			/>
 			<button
-				className={cx('app__layout--form-input', {
+				className={cx('app__layout--form-input', 'app__layout--form-input-reconnect-btn', {
 					'app__layout--form-input-connect-active': reconnect
 				})}
 				type="button"

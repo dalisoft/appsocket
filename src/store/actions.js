@@ -27,7 +27,7 @@ export default (store) => ({
 				connected: false,
 				type: 'ws',
 				host: 'host',
-				port: '',
+				port: 80,
 				path: '',
 				messages: []
 			}
