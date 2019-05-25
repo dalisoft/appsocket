@@ -6,9 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "rm -rf build && preact build",
+    "build": "rm -rf build && preact build --template src/template.html",
     "serve": "npm run build && preact serve",
-    "dev": "preact watch",
+    "dev": "preact watch --template src/template.html",
     "lint": "eslint src",
     "app": "npm run build && deskgap ."
   },
