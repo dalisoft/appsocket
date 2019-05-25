@@ -42,6 +42,7 @@ Session files are JSON encoded objects, arrays and primites which contains `webs
 ## TO-DO
 
 - [ ] Implement Save session dialog like Open session dialog (i haven't idea)
+- [ ] Fix: In Application download session not works as excepted
 
 ## Credits
 
