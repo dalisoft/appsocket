@@ -38,7 +38,7 @@ class MessageFormBar extends Component {
 				actions.pushMessage(id, 'output', messageText);
 				this.setMessage('');
 				this.setFieldError(false);
-				this.setBtnError(true);
+				this.setBtnError(false);
 			}
 			else {
 				this.setBtnError(true);
