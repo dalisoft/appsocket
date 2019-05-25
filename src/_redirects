@@ -1,1 +1,1 @@
-/browserconfig.xml assets/browserconfig.xml 200
+/*.xml /assets/:splat.xml 200
