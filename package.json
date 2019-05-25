@@ -26,6 +26,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "deskgap": "^0.1.0",
+    "file-saver": "^2.0.2",
     "preact": "^8.4.2",
     "preact-virtual-list": "^0.3.1",
     "unistore": "^3.4.1"

@@ -32,10 +32,16 @@ npm run app
 
 This app uses your system default browser engine, if you use macOS, then app embeds Safari or if you using Windows 10, then it embeds Microsoft Edge browser and so on.
 
+## Session Open / Save (Download)
+
+Session files are JSON encoded objects, arrays and primites which contains `websocket` items, url, host, messages and state
+
+- You can now Load session by `ctrl + o` and select `your-session-file.json`
+- You can Download session by `ctrl + d` and save your session file where you want
+
 ## TO-DO
 
-- [ ] Implement Load Session (idea done, just has some work for make it work)
-- [ ] Implement Save session (idea done, just has some work for make it work)
+- [ ] Implement Save session dialog like Open session dialog (i haven't idea)
 
 ## Credits
 
