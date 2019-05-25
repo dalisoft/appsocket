@@ -1,5 +1,7 @@
 # AppSocket
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dalisoft/appsocket.svg)](https://greenkeeper.io/)
+
 Lightweight, fast & simple WebSocket client
 
 ## Features
