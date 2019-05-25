@@ -26,7 +26,7 @@
 	}
 
 	.app__layout--form-input-msg {
-		width: 90%;
+		width: 75%;
 	}
 
 	.app__layout--form-input-port {
@@ -44,7 +44,7 @@
 	}
 
 	.app__layout--form-input-msg {
-		width: 88%;
+		width: 73%;
 	}
 
 	.app__layout--form-input-port {
@@ -74,7 +74,7 @@
 	}
 
 	.app__layout--form-input-msg {
-		width: 86%;
+		width: 71%;
 	}
 
 	.app__layout--form-input-port {
@@ -105,7 +105,7 @@
 	}
 
 	.app__layout--form-input-msg {
-		width: 84%;
+		width: 69%;
 	}
 
 	.app__layout--form-input-port {
@@ -120,6 +120,9 @@
 @media (max-width: 639px) {
 	.app-layout__sidebar {
 		flex-basis: 30%;
+	}
+	.app-sidebar__connection > * {
+		font-size: 0.75rem;
 	}
 
 	.app-layout__content {
@@ -140,7 +143,7 @@
 	}
 
 	.app__layout--form-input-msg {
-		width: 80%;
+		width: 65%;
 	}
 
 	.app__layout--form-input-port {
@@ -152,10 +155,13 @@
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
 	.app-layout__sidebar {
 		flex-basis: 0%;
 		padding: 0;
+	}
+	.app-sidebar__connection > * {
+		font-size: 0.7rem;
 	}
 
 	.app-layout__content {
