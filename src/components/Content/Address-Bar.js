@@ -38,11 +38,11 @@ class AddressBar extends Preact.Component {
 			url,
 			{
 				async beforeConnect() {
-					await fetch(
-						`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`,
-						{ method: 'GET' },
-						getHeaders(headers)
-					).catch((err) => {
+					await fetch(`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`, {
+						method: 'GET',
+						credentials: 'include',
+						headers: getHeaders(headers)
+					}).catch((err) => {
 						console.error('AppSocket [Error]: ', err);
 					});
 				},
