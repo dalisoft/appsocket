@@ -48,7 +48,7 @@
 }
 
 .app__layout--form-input-host {
-	width: 55%;
+	width: 47%;
 }
 
 .app__layout--form-input-port {
@@ -61,6 +61,10 @@
 
 .app__layout--form-input-msg {
 	width: 80%;
+}
+
+.app__layout--form-input-header-field {
+	width: 40%;
 }
 
 .app__layout--form-input-connect-active {

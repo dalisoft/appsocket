@@ -36,6 +36,7 @@ class MessageFormBar extends Component {
 			if (socket && socket.readyState === socket.OPEN) {
 				socket.send(messageText);
 				actions.pushMessage(id, 'output', messageText);
+				actions.setConnectionValue(id, 'configuring', false);
 				this.setMessage('');
 				this.setFieldError(false);
 				this.setBtnError(false);
@@ -53,9 +54,7 @@ class MessageFormBar extends Component {
 
 		this.state = { messageText: '', btnError: false, fieldError: false };
 	}
-	render() {
-		const { messageText, btnError, fieldError } = this.state;
-
+	render(props, { messageText, btnError, fieldError }) {
 		return (
 			<form className="app__layout--form app__messages__message--send-bar" onSubmit={this.handleMessageSend}>
 				<button

@@ -16,7 +16,8 @@
 	margin-top: auto;
 }
 
-.app__messages__list {
+.app__messages__list,
+.app__configurations {
 	flex-grow: 1;
 	display: flex;
 	padding: 0;
@@ -24,11 +25,36 @@
 	position: relative;
 }
 
+.app__configurations {
+	flex-flow: column;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.app__configuration-title {
+	font-weight: 100;
+}
+
+.app__configurations--item {
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-self: center;
+	width: 98%;
+	border-radius: 8px;
+	margin-bottom: 1vh;
+}
+
+.app__configurations--item,
 .app__messages__message--item {
 	padding: 4px 8px;
 	background-color: #d5d5d5;
+}
+
+.app__messages__message--item {
 	font-size: 0.75rem;
 }
+
 .app__messages__message--item:nth-of-type(odd) {
 	background-color: #eee;
 }

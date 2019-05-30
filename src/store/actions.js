@@ -24,12 +24,14 @@ export default (store) => ({
 				key: 'sess_connection_' + Math.round(Math.random() * 1e10).toString(36),
 				active: false,
 				reconnect: false,
+				configuring: false,
 				connected: false,
 				type: 'ws',
 				host: 'host',
 				port: 80,
 				path: '',
-				messages: []
+				messages: [],
+				headers: [{ id: 1 }]
 			}
 		]
 	}),

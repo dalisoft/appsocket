@@ -1,6 +1,6 @@
 import ws from '../websockets';
 
-const connectWebSocket = (id, url, on = {}, reconnect) => {
+const connectWebSocket = async (id, url, on = {}, reconnect) => {
 	let socket;
 
 	if (ws[id]) {
@@ -17,6 +17,10 @@ const connectWebSocket = (id, url, on = {}, reconnect) => {
 		socket.close();
 	}
 
+	if (on.beforeConnect) {
+		await on.beforeConnect(id, url, reconnect);
+	}
+
 	socket = new WebSocket(url);
 
 	socket.onopen = (e) => {
@@ -28,6 +32,9 @@ const connectWebSocket = (id, url, on = {}, reconnect) => {
 	socket.onmessage = on.message;
 	socket.onerror = (e) => {
 		if (reconnect) {
+			if (on.reconnect) {
+				on.reconnect(e, 'error');
+			}
 			connectWebSocket(id, url, on, reconnect);
 		}
 		else if (on.error) {
@@ -37,7 +44,7 @@ const connectWebSocket = (id, url, on = {}, reconnect) => {
 	socket.onclose = (e) => {
 		if (reconnect && e.code !== 1005) {
 			if (on.reconnect) {
-				on.reconnect(e);
+				on.reconnect(e, 'close');
 			}
 			setTimeout(connectWebSocket, 1000, id, url, on, reconnect);
 		}
