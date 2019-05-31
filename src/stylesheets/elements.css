@@ -64,7 +64,7 @@
 }
 
 .app__layout--form-input-header-field {
-	width: 40%;
+	width: 44%;
 }
 
 .app__layout--form-input-connect-active {
@@ -79,4 +79,5 @@
 	flex-direction: row;
 	justify-content: space-around;
 	padding: 16px 8px;
+	min-height: 70px;
 }

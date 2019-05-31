@@ -13,7 +13,7 @@ class Configuration extends Preact.Component {
 				return header;
 			});
 
-			if (target.name === 'value' && target.value > 4) {
+			if (target.name === 'value' && target.value.length > 2 && currentHeader.name && currentHeader.name.length > 2) {
 				const lastHeader = headers[headers.length - 1];
 				if (lastHeader.id === currentHeader.id) {
 					headers.push({ id: currentHeader.id + 1 });
@@ -28,6 +28,13 @@ class Configuration extends Preact.Component {
 					socket.close(1000);
 				}
 			}
+		};
+	}
+	removeHeader(id) {
+		return (e) => {
+			const { actions, connection } = this.props;
+
+			actions.setConnectionValue(connection.id, 'headers', connection.headers.filter((header) => header.id !== id));
 		};
 	}
 	render({ connection, actions }) {
@@ -52,6 +59,9 @@ class Configuration extends Preact.Component {
 							placeholder="value"
 							onInput={this.handleHeaderChange(header)}
 						/>
+						<button className={'app__layout--form-input'} type="button" onClick={this.removeHeader(header.id)}>
+							×
+						</button>
 					</div>
 				))}
 			</form>

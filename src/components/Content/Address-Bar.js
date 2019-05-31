@@ -38,10 +38,17 @@ class AddressBar extends Preact.Component {
 			url,
 			{
 				async beforeConnect() {
+					const parsedHeaders = getHeaders(headers);
+					const { Cookie } = parsedHeaders;
+
+					if (Cookie) {
+						document.cookie = Cookie;
+						delete parsedHeaders.Cookie;
+					}
 					await fetch(`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`, {
 						method: 'GET',
 						credentials: 'include',
-						headers: getHeaders(headers)
+						headers: parsedHeaders
 					}).catch((err) => {
 						console.error('AppSocket [Error]: ', err);
 					});
