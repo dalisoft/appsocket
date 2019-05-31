@@ -45,13 +45,14 @@ class AddressBar extends Preact.Component {
 						document.cookie = Cookie;
 						delete parsedHeaders.Cookie;
 					}
-					await fetch(`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`, {
+
+					/* await fetch(`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`, {
 						method: 'GET',
 						credentials: 'include',
 						headers: parsedHeaders
 					}).catch((err) => {
 						console.error('AppSocket [Error]: ', err);
-					});
+					}); */
 				},
 				open() {
 					actions.setConnectionValue(id, 'connected', true);
