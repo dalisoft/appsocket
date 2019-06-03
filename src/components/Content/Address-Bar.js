@@ -10,7 +10,7 @@ class AddressBar extends Preact.Component {
 		this.handleConnect = this.handleConnect.bind(this);
 		this.socket = ws[props.id];
 	}
-	async handleConnect(e) {
+	handleConnect(e) {
 		const { id, type, host, port, path, reconnect, connected, actions } = this.props;
 		const { socket } = this;
 
@@ -32,7 +32,7 @@ class AddressBar extends Preact.Component {
 		url += port ? ':' + port : '';
 		url += path;
 
-		this.socket = await connectWebSocket(
+		connectWebSocket(
 			id,
 			url,
 			{
@@ -47,7 +47,9 @@ class AddressBar extends Preact.Component {
 				}
 			},
 			reconnect
-		);
+		).then((socket) => {
+			this.socket = socket;
+		});
 	}
 	handleChange(key) {
 		return (e) => {

@@ -12,13 +12,13 @@
 		"lint": "eslint src"
 	},
 	"devDependencies": {
+		"@namics/stylelint-bem": "^6.0.0",
 		"eslint": "^5.16.0",
 		"eslint-config-synacor": "^3.0.4",
-		"if-env": "^1.0.4",
-		"preact-cli": "^2.2.1",
-		"@namics/stylelint-bem": "^6.0.0",
 		"husky": "^2.3.0",
+		"if-env": "^1.0.4",
 		"lint-staged": "^8.1.7",
+		"preact-cli": "^2.2.1",
 		"prettier": "^1.17.1",
 		"stylelint": "^10.0.1"
 	},

@@ -1,6 +1,6 @@
 import ws from '../websockets';
 
-const connectWebSocket = async (id, url, on = {}, reconnect) => {
+const connectWebSocket = (id, url, on = {}, reconnect) => {
 	let socket;
 
 	if (ws[id]) {
@@ -15,10 +15,6 @@ const connectWebSocket = async (id, url, on = {}, reconnect) => {
 		};
 
 		socket.close();
-	}
-
-	if (on.beforeConnect) {
-		await on.beforeConnect(id, url, reconnect);
 	}
 
 	socket = new WebSocket(url);
