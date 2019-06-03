@@ -1,5 +1,10 @@
 /* stylelint-disable selector-class-pattern */
 
+@media (display-mode: standalone) {
+	.app-layout {
+		border-top: solid 1px #aaa;
+	}
+}
 @media (min-width: 2560px) {
 	.app-layout__sidebar {
 		flex-basis: 10%;
