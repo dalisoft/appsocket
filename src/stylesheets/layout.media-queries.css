@@ -10,6 +10,9 @@
 		.app__layout--form {
 			min-height: 72px;
 		}
+		.app__layout--form.app__messages__message--send-bar {
+			min-height: 50px;
+		}
 		.app__configurations--item {
 			min-height: 46px;
 		}

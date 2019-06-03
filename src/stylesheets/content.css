@@ -14,7 +14,6 @@
 	border-top: solid 1px #bbb;
 	background-color: rgb(211, 211, 211);
 	margin-top: auto;
-	min-height: 50px;
 }
 
 .app__messages__list,
