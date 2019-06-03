@@ -55,6 +55,9 @@
 	.app__layout--form-input-path {
 		width: 10%;
 	}
+	.app__layout--form-input-url-field {
+		width: 88%;
+	}
 }
 
 @media (min-width: 970px) and (max-width: 1028px) {
@@ -72,6 +75,9 @@
 
 	.app__layout--form-input-path {
 		width: 9%;
+	}
+	.app__layout--form-input-url-field {
+		width: 86%;
 	}
 }
 
@@ -98,10 +104,14 @@
 
 	.app__layout--form-input-port {
 		width: 12%;
+		display: none;
 	}
 
 	.app__layout--form-input-path {
-		width: 8%;
+		width: 14%;
+	}
+	.app__layout--form-input-url-field {
+		width: 83%;
 	}
 }
 
@@ -129,10 +139,14 @@
 
 	.app__layout--form-input-port {
 		width: 12%;
+		display: none;
 	}
 
 	.app__layout--form-input-path {
-		width: 10%;
+		width: 16%;
+	}
+	.app__layout--form-input-url-field {
+		width: 82%;
 	}
 }
 
@@ -167,10 +181,14 @@
 
 	.app__layout--form-input-port {
 		width: 12%;
+		display: none;
 	}
 
 	.app__layout--form-input-path {
-		width: 10%;
+		width: 14%;
+	}
+	.app__layout--form-input-url-field {
+		width: 75%;
 	}
 }
 
