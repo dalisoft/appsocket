@@ -31,7 +31,7 @@ Chrome should be installed
 **Warning**: _Before installing app, please make sure you using latest copy, else delete your old session and loading old session causes app working inproperly_
 
 1. Install Chrome v73+ (if not installed yet)
-2. Open https://appsocket.js.org
+2. Open <https://appsocket.js.org>
 3. Click to Chrome menu (right top)
 4. Install "AppSocket" prompts
 5. Click Yes

@@ -3,28 +3,28 @@ import Preact from 'preact';
 import cx from 'classnames';
 import ws from '../../websockets';
 
-import getHeaders from '../../helpers/get-headers';
+import normaliseFields from '../../helpers/normalise-fields';
 
 class Configuration extends Preact.Component {
-	handleHeaderChange(currentHeader) {
+	handleFieldChange(type, currentField) {
 		return (e) => {
 			const { connection, actions } = this.props;
 			const { target } = e;
-			const headers = connection.authHeaders.map((header) => {
-				if (header.id === currentHeader.id) {
-					return { ...header, [target.name]: target.value };
+			const fields = connection[type].map((field) => {
+				if (field.id === currentField.id) {
+					return { ...field, [target.name]: target.value };
 				}
-				return header;
+				return field;
 			});
 
-			if (target.name === 'value' && target.value.length > 2 && currentHeader.name && currentHeader.name.length > 2) {
-				const lastHeader = headers[headers.length - 1];
-				if (lastHeader.id === currentHeader.id) {
-					headers.push({ id: currentHeader.id + 1 });
+			if (target.name === 'value' && target.value.length > 2 && currentField.name && currentField.name.length > 2) {
+				const lastField = fields[fields.length - 1];
+				if (lastField.id === currentField.id) {
+					fields.push({ id: currentField.id + 1 });
 				}
 			}
 
-			actions.setConnectionValue(connection.id, 'authHeaders', headers);
+			actions.setConnectionValue(connection.id, type, fields);
 
 			let socket;
 			if ((socket = ws[connection.id])) {
@@ -34,15 +34,11 @@ class Configuration extends Preact.Component {
 			}
 		};
 	}
-	removeHeader(id) {
+	removeField(type, id) {
 		return (e) => {
 			const { actions, connection } = this.props;
 
-			actions.setConnectionValue(
-				connection.id,
-				'authHeaders',
-				connection.authHeaders.filter((header) => header.id !== id)
-			);
+			actions.setConnectionValue(connection.id, type, connection[type].filter((field) => field.id !== id));
 		};
 	}
 	handleUrlChange = (e) => {
@@ -75,7 +71,7 @@ class Configuration extends Preact.Component {
 		e.preventDefault();
 
 		const { actions, connection } = this.props;
-		const { authUrl, authHeaders } = connection;
+		const { authUrl, authHeaders, authBody } = connection;
 
 		if (!authUrl || (typeof authUrl === 'string' && (!authUrl.startsWith('http') || authUrl.length <= 6))) {
 			actions.setConnectionValue(connection.id, 'authStatus', 'error');
@@ -85,9 +81,10 @@ class Configuration extends Preact.Component {
 		actions.setConnectionValue(connection.id, 'authStatus', null);
 
 		fetch(authUrl, {
-			method: 'GET',
+			method: 'POST',
 			credentials: 'include',
-			headers: getHeaders(authHeaders)
+			headers: normaliseFields(authHeaders),
+			body: JSON.stringify(normaliseFields(authBody))
 		})
 			.then(() => {
 				actions.setConnectionValue(connection.id, 'authStatus', 'done');
@@ -130,29 +127,70 @@ class Configuration extends Preact.Component {
 				</div>
 				<h3 className="app__configuration-title">Headers</h3>
 				{connection.authHeaders &&
-					connection.authHeaders.map((header) => (
-						<div key={'header-' + header.id} className="app__configurations--item">
-							<input
-								name="name"
-								key={'header-name-field-' + header.id}
-								value={header.name}
-								className="app__layout--form-input app__layout--form-input-header-field"
-								placeholder="name"
-								onInput={this.handleHeaderChange(header)}
-							/>
-							<input
-								name="value"
-								key={'header-value-field-' + header.id}
-								value={header.value}
-								className="app__layout--form-input app__layout--form-input-header-field"
-								placeholder="value"
-								onInput={this.handleHeaderChange(header)}
-							/>
-							<button className={'app__layout--form-input'} type="button" onClick={this.removeHeader(header.id)}>
-								×
-							</button>
-						</div>
-					))}
+					connection.authHeaders.map((header, index) => {
+						const handleInput = this.handleFieldChange('authHeaders', header);
+						return (
+							<div key={'header-' + header.id} className="app__configurations--item">
+								<input
+									name="name"
+									key={'header-name-field-' + header.id}
+									value={header.name}
+									className="app__layout--form-input app__layout--form-input-header-field"
+									placeholder="name"
+									onInput={handleInput}
+								/>
+								<input
+									name="value"
+									key={'header-value-field-' + header.id}
+									value={header.value}
+									className="app__layout--form-input app__layout--form-input-header-field"
+									placeholder="value"
+									onInput={handleInput}
+								/>
+								<button
+									className={'app__layout--form-input'}
+									type="button"
+									onClick={this.removeField('authHeaders', header.id)}
+									disabled={index === 0}
+								>
+									×
+								</button>
+							</div>
+						);
+					})}
+				<h3 className="app__configuration-title">Body</h3>
+				{connection.authBody &&
+					connection.authBody.map((body, index) => {
+						const handleInput = this.handleFieldChange('authBody', body);
+						return (
+							<div key={'body-' + body.id} className="app__configurations--item">
+								<input
+									name="name"
+									key={'body-name-field-' + body.id}
+									value={body.name}
+									className="app__layout--form-input app__layout--form-input-header-field"
+									placeholder="name"
+									onInput={handleInput}
+								/>
+								<input
+									name="value"
+									key={'body-value-field-' + body.id}
+									value={body.value}
+									className="app__layout--form-input app__layout--form-input-header-field"
+									placeholder="value"
+									onInput={handleInput}
+								/>
+								<button
+									className={'app__layout--form-input'}
+									type="button"
+									onClick={this.removeField('authBody', body.id)}
+									disabled={index === 0}
+								>
+									×
+								</button>
+							</div>
+						);
+					})}
 			</form>
 		);
 	}
