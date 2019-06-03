@@ -31,7 +31,9 @@ export default (store) => ({
 				port: 80,
 				path: '',
 				messages: [],
-				headers: [{ id: 1 }]
+				authStatus: null,
+				authHeaders: [{ id: 1 }],
+				authUrl: []
 			}
 		]
 	}),

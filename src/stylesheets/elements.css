@@ -13,6 +13,10 @@
 	border-color: #b3404a !important;
 }
 
+.app__layout--form-input-done {
+	border-color: #51a6ce !important;
+}
+
 .app__layout--form-input:hover {
 	border-color: #ccc;
 }
@@ -63,6 +67,10 @@
 	width: 80%;
 }
 
+.app__layout--form-input-url-field {
+	width: 90%;
+}
+
 .app__layout--form-input-header-field {
 	width: 44%;
 }
@@ -79,5 +87,5 @@
 	flex-direction: row;
 	justify-content: space-around;
 	padding: 16px 8px;
-	min-height: 70px;
+	min-height: 72px;
 }

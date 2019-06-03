@@ -2,7 +2,6 @@ import Preact from 'preact';
 import cx from 'classnames';
 import ws from '../../websockets';
 import connectWebSocket from '../../helpers/connect-ws';
-import getHeaders from '../../helpers/get-headers';
 
 class AddressBar extends Preact.Component {
 	constructor(props) {
@@ -12,7 +11,7 @@ class AddressBar extends Preact.Component {
 		this.socket = ws[props.id];
 	}
 	async handleConnect(e) {
-		const { id, type, host, port, path, reconnect, headers, connected, actions } = this.props;
+		const { id, type, host, port, path, reconnect, connected, actions } = this.props;
 		const { socket } = this;
 
 		e.preventDefault();
@@ -37,23 +36,6 @@ class AddressBar extends Preact.Component {
 			id,
 			url,
 			{
-				async beforeConnect() {
-					const parsedHeaders = getHeaders(headers);
-					const { Cookie } = parsedHeaders;
-
-					if (Cookie) {
-						document.cookie = Cookie;
-						delete parsedHeaders.Cookie;
-					}
-
-					/* await fetch(`${type === 'ws' ? 'http' : 'https'}://${host}${port ? ':' + port : ''}${path}`, {
-						method: 'GET',
-						credentials: 'include',
-						headers: parsedHeaders
-					}).catch((err) => {
-						console.error('AppSocket [Error]: ', err);
-					}); */
-				},
 				open() {
 					actions.setConnectionValue(id, 'connected', true);
 				},
@@ -152,7 +134,7 @@ class AddressBar extends Preact.Component {
 					type="button"
 					onClick={this.handleChange('configuring')}
 				>
-					Configure
+					Authorize
 				</button>
 				<button
 					name="connect"

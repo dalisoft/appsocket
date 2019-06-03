@@ -1,6 +1,6 @@
 import AddressBar from './Address-Bar';
 import MessagesList from './Messages-List';
-import Configuration from './Configuration';
+import AuthConfig from './AuthConfig';
 import MessagesFormBar from './Message-Form-Bar';
 
 const Content = ({ actions, connection }) =>
@@ -10,7 +10,7 @@ const Content = ({ actions, connection }) =>
 			{connection.messages && !connection.configuring && (
 				<MessagesList messages={connection.messages} key="messages-list" />
 			)}
-			{connection.configuring && <Configuration connection={connection} actions={actions} />}
+			{connection.configuring && <AuthConfig connection={connection} actions={actions} />}
 			<MessagesFormBar id={connection.id} actions={actions} key="app__messages__message--send-bar" />
 		</main>
 	)) ||
