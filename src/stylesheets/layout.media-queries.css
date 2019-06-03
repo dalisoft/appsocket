@@ -5,6 +5,20 @@
 		border-top: solid 1px #aaa;
 	}
 }
+@media not all and (min-resolution: 0.001dpcm) {
+	@media {
+		.app__layout--form {
+			min-height: 72px;
+		}
+		.app__configurations--item {
+			min-height: 46px;
+		}
+		.app__configurations--item,
+		.app__messages__message--item {
+			padding: 4px 8px;
+		}
+	}
+}
 @media (min-width: 2560px) {
 	.app-layout__sidebar {
 		flex-basis: 10%;
