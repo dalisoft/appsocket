@@ -12,9 +12,9 @@ Lightweight, fast & simple WebSocket client
 - Responsive
 - Session supported (only for this feature i did own app)
 - LocalStorage saving
-- Cross-browser (if you want use web-version)
+- Cross-browser
 
-## Installing
+## Installing (for Local Development only)
 
 ```bash
 npm i
@@ -24,15 +24,14 @@ And that's all, nothing more need
 
 ## Running app
 
-```bash
-npm run app
-```
+**Warning**: _Before installing app, please make sure you using latest copy, else delete your old session and loading old session causes app working inproperly_
 
-**Note**: _App runs in production mode, so, any changes related to code not trigger app changes_
-
-## Rendering
-
-This app uses your system default browser engine, if you use macOS, then app embeds Safari or if you using Windows 10, then it embeds Microsoft Edge browser and so on.
+1. Install Chrome v73+ (if not installed yet)
+2. Open https://appsocket.js.org
+3. Click to Chrome menu (right top)
+4. Install "AppSocket" prompts
+5. Click Yes
+6. Enjoy!
 
 ## Session Open / Save (Download)
 
@@ -40,11 +39,6 @@ Session files are JSON encoded objects, arrays and primites which contains `webs
 
 - You can now Load session by `ctrl + o` and select `your-session-file.json`
 - You can Download session by `ctrl + d` and save your session file where you want
-
-## TO-DO
-
-- [ ] Implement Save session dialog like Open session dialog (i haven't idea)
-- [ ] Fix: In Application download session not works as excepted
 
 ## Credits
 
@@ -54,7 +48,6 @@ Icons and/or Logo made by [Freepik](https://www.freepik.com/) from [www.flaticon
 
 ### Libraries
 
-- DeskApp (@patr0nus)
 - Preact and Unistore (@developit)
 
 And others who made great library and frameworks which used by this application. All packages can be seen in `package.json` (don't forget)
