@@ -2,7 +2,7 @@ import createStore from 'unistore';
 import actions from './actions';
 import { saveAs } from 'file-saver';
 
-let state = { session: 'session-id__' + Math.round(Math.random() * 1e10).toString(36), connections: [] };
+let state = { session: 'session-' + Math.round(Math.random() * 1e10).toString(36), connections: [] };
 
 const store = createStore(state);
 
@@ -53,7 +53,7 @@ if (typeof window !== 'undefined') {
 			}
 			else if (e.key === 'd') {
 				let blob = new Blob([JSON.stringify(sess)], { type: 'application/json;charset=utf-8' });
-				saveAs(blob, 'session-' + state.session + '.json');
+				saveAs(blob, state.session + '.json');
 			}
 		}
 	});

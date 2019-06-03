@@ -22,6 +22,10 @@ npm i
 
 And that's all, nothing more need
 
+## Requirements
+
+Chrome should be installed
+
 ## Running app
 
 **Warning**: _Before installing app, please make sure you using latest copy, else delete your old session and loading old session causes app working inproperly_
