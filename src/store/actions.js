@@ -33,7 +33,7 @@ export default (store) => ({
 				messages: [],
 				authStatus: null,
 				authHeaders: [{ id: 1 }],
-				authUrl: []
+				authUrl: ''
 			}
 		]
 	}),

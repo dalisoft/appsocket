@@ -48,12 +48,19 @@ class Configuration extends Preact.Component {
 	handleUrlChange = (e) => {
 		const { actions, connection } = this.props;
 		const { value } = e.target;
+		const { authUrl, authStatus } = connection;
 
+		if (
+			authStatus === 'error' &&
+			(authUrl || (typeof authUrl === 'string' && (authUrl.startsWith('http') || authUrl.length > 6)))
+		) {
+			actions.setConnectionValue(connection.id, 'authStatus', null);
+		}
 		actions.setConnectionValue(connection.id, 'authUrl', value);
 	};
 	handleSubmitBtnColorReset = (stack) => {
 		const { actions, connection } = this.props;
-		const { authStatus } = connection;
+		let { authStatus } = connection;
 
 		actions.setConnectionValue(connection.id, 'authStatus', null);
 
@@ -69,6 +76,11 @@ class Configuration extends Preact.Component {
 
 		const { actions, connection } = this.props;
 		const { authUrl, authHeaders } = connection;
+
+		if (!authUrl || (typeof authUrl === 'string' && (!authUrl.startsWith('http') || authUrl.length <= 6))) {
+			actions.setConnectionValue(connection.id, 'authStatus', 'error');
+			return;
+		}
 
 		actions.setConnectionValue(connection.id, 'authStatus', null);
 
@@ -117,29 +129,30 @@ class Configuration extends Preact.Component {
 					</button>
 				</div>
 				<h3 className="app__configuration-title">Headers</h3>
-				{connection.authHeaders.map((header) => (
-					<div key={'header-' + header.id} className="app__configurations--item">
-						<input
-							name="name"
-							key={'header-name-field-' + header.id}
-							value={header.name}
-							className="app__layout--form-input app__layout--form-input-header-field"
-							placeholder="name"
-							onInput={this.handleHeaderChange(header)}
-						/>
-						<input
-							name="value"
-							key={'header-value-field-' + header.id}
-							value={header.value}
-							className="app__layout--form-input app__layout--form-input-header-field"
-							placeholder="value"
-							onInput={this.handleHeaderChange(header)}
-						/>
-						<button className={'app__layout--form-input'} type="button" onClick={this.removeHeader(header.id)}>
-							×
-						</button>
-					</div>
-				))}
+				{connection.authHeaders &&
+					connection.authHeaders.map((header) => (
+						<div key={'header-' + header.id} className="app__configurations--item">
+							<input
+								name="name"
+								key={'header-name-field-' + header.id}
+								value={header.name}
+								className="app__layout--form-input app__layout--form-input-header-field"
+								placeholder="name"
+								onInput={this.handleHeaderChange(header)}
+							/>
+							<input
+								name="value"
+								key={'header-value-field-' + header.id}
+								value={header.value}
+								className="app__layout--form-input app__layout--form-input-header-field"
+								placeholder="value"
+								onInput={this.handleHeaderChange(header)}
+							/>
+							<button className={'app__layout--form-input'} type="button" onClick={this.removeHeader(header.id)}>
+								×
+							</button>
+						</div>
+					))}
 			</form>
 		);
 	}

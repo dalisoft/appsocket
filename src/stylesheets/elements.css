@@ -2,7 +2,7 @@
 .app__layout--form-input {
 	background-color: rgba(245, 245, 245, 0.85);
 	border: solid 2px rgba(255, 255, 255, 0);
-	border-radius: 1rem;
+	border-radius: 2rem;
 	font-size: 0.75rem;
 	padding: 8px 12px;
 	transition: 200ms ease-out;
@@ -87,5 +87,4 @@
 	flex-direction: row;
 	justify-content: space-around;
 	padding: 16px 8px;
-	min-height: 72px;
 }

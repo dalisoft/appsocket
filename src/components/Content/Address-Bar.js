@@ -32,7 +32,7 @@ class AddressBar extends Preact.Component {
 		url += port ? ':' + port : '';
 		url += path;
 
-		connectWebSocket(
+		this.socket = connectWebSocket(
 			id,
 			url,
 			{
@@ -47,9 +47,7 @@ class AddressBar extends Preact.Component {
 				}
 			},
 			reconnect
-		).then((socket) => {
-			this.socket = socket;
-		});
+		);
 	}
 	handleChange(key) {
 		return (e) => {
