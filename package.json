@@ -3,7 +3,6 @@
 	"version": "0.0.1",
 	"description": "Lightweight, fast & simple WebSocket client",
 	"license": "MIT",
-	"main": "app.js",
 	"scripts": {
 		"start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
 		"fix-redirects": "cp ./src/_redirects build/",
