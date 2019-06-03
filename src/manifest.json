@@ -1,6 +1,7 @@
 {
 	"name": "AppSocket",
 	"short_name": "AppSocket",
+	"description": "Lightweight, fast & simple WebSocket client",
 	"icons": [
 		{
 			"src": "/assets/icons/android-chrome-192x192.png",
