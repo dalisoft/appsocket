@@ -44,6 +44,18 @@ Session files are JSON encoded objects, arrays and primites which contains `webs
 - You can now Load session by `ctrl + o` and select `your-session-file.json`
 - You can Download session by `ctrl + d` and save your session file where you want
 
+## To-Do / Roadmap
+
+These features can be added, you send PR, but not in priority for me
+
+- [ ] Settings modal and/or page
+- [ ] Asking `Install AppSocket` on load (Desktop PWA-only)
+- [ ] Notification prompt on load
+- [ ] Notificatin in AppSocket settings
+- [ ] Session versioning
+- [ ] Session checking compatibility with loaded session
+- [ ] Session diffing on loading session
+
 ## Credits
 
 ### Icons
