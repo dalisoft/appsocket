@@ -32,16 +32,15 @@ if (typeof window !== 'undefined') {
 
 					let reader = new FileReader();
 					reader.readAsText(file, 'UTF-8');
-					reader.onload = function(evt) {
+					reader.onload = function (evt) {
 						try {
 							const data = JSON.parse(evt.target.result);
 							store.setState(data);
-						}
-						catch (e) {
+						} catch (e) {
 							console.error('Session file was marlformed');
 						}
 					};
-					reader.onerror = function(evt) {
+					reader.onerror = function (evt) {
 						console.error('error reading file');
 					};
 
@@ -50,8 +49,7 @@ if (typeof window !== 'undefined') {
 
 				// dispatch a click event to open the file dialog
 				inputElement.dispatchEvent(new MouseEvent('click'));
-			}
-			else if (e.key === 'd') {
+			} else if (e.key === 'd') {
 				let blob = new Blob([JSON.stringify(sess)], { type: 'application/json;charset=utf-8' });
 				saveAs(blob, state.session + '.json');
 			}

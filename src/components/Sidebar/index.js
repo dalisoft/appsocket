@@ -24,8 +24,5 @@ const Sidebar = ({ connections, setActive, deleteConnection, addConnection }) =>
 	);
 };
 
-const enhance = connect(
-	'connections',
-	actions
-);
+const enhance = connect('connections', actions);
 export default enhance(Sidebar);

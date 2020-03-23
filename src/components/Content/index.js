@@ -7,9 +7,6 @@ const ContentWrapper = ({ connections, ...actions }) => (
 	<Content connection={connections.find((conn) => conn.active)} actions={actions} key="content-wrapped" />
 );
 
-const enhance = connect(
-	'connections',
-	actions
-);
+const enhance = connect('connections', actions);
 
 export default enhance(ContentWrapper);

@@ -7,9 +7,6 @@ const LayoutToggler = ({ contentSize, toggleContentSize }) => (
 	</span>
 );
 
-const enhance = connect(
-	'contentSize',
-	actions
-);
+const enhance = connect('contentSize', actions);
 
 export default enhance(LayoutToggler);

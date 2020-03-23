@@ -8,8 +8,7 @@ export default (store) => ({
 		connections: state.connections.map((connection) => {
 			if (connection.id === id) {
 				connection.active = true;
-			}
-			else {
+			} else {
 				connection.active = false;
 			}
 			return connection;
@@ -20,7 +19,7 @@ export default (store) => ({
 		connections: [
 			...(state.connections || []),
 			{
-				id: state.connections.length > 0 ? Math.max.apply(null, state.connections.map((conn) => conn.id)) + 1 : 1,
+				id: state.connections.length > 0 ? Math.max(...state.connections.map((conn) => conn.id)) + 1 : 1,
 				key: 'sess_connection_' + Math.round(Math.random() * 1e10).toString(36),
 				active: false,
 				reconnect: false,

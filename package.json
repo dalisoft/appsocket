@@ -19,8 +19,8 @@
 		"if-env": "^1.0.4",
 		"lint-staged": "^10.0.3",
 		"preact-cli": "^2.2.1",
-		"prettier": "^1.17.1",
-		"stylelint": "^11.0.0"
+		"prettier": "^2.0.1",
+		"stylelint": "^13.2.1"
 	},
 	"dependencies": {
 		"classnames": "^2.2.6",

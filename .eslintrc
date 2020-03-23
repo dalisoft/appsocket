@@ -1,3 +1,6 @@
 {
-  "extends": "eslint-config-synacor"
+	"extends": "eslint-config-synacor",
+	"rules": {
+		"brace-style": "off"
+	}
 }

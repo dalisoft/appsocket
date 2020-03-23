@@ -38,7 +38,11 @@ class Configuration extends Preact.Component {
 		return (e) => {
 			const { actions, connection } = this.props;
 
-			actions.setConnectionValue(connection.id, type, connection[type].filter((field) => field.id !== id));
+			actions.setConnectionValue(
+				connection.id,
+				type,
+				connection[type].filter((field) => field.id !== id)
+			);
 		};
 	}
 	handleUrlChange = (e) => {
