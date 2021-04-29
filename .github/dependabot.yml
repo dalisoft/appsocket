@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - "> 6.8.0"
+  - dependency-name: husky
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: preact-cli
+    versions:
+    - "> 2.2.1"
+  - dependency-name: stylelint
+    versions:
+    - "> 11.1.1"
